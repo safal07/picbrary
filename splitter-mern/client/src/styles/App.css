@@ -1,0 +1,273 @@
+/* COMMON CLASSES ////////////////////////////////*/
+:root {
+  --main-font: 'Open Sans', sans-serif;;
+  --main-background-color: white;
+  --main-light-grey: #A0A0A0;
+  --main-blue-color: #4256f4;
+  --money-green-color: #6FCF97;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+  background: #f3f6f9;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.body {
+  min-height: calc(100vh - 60px);
+}
+
+.subMenuList::-webkit-scrollbar, .dashboard-bottom::-webkit-scrollbar, .table-data::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.uk-button {
+  border-radius: 4px;
+}
+
+.uk-button-primary {
+  background: var(--main-blue-color);
+  border-radius: 4px;
+}
+
+
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.uk-label {
+  background: var(--main-light-grey);
+  margin: 0 3px;
+}
+
+::placeholder {
+  color: var(--main-light-grey);
+  opacity: 1; /* Firefox */
+}
+
+/* LOADING ////////////////////////////////*/
+
+.loading_showing{
+  left: 0;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #F0F0F0;
+  z-index: 1000;
+}
+
+.loading_hiding{
+  display: none;
+}
+
+.ballplay{
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.balls{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball{
+  height: 20px;
+  width: 20px;
+  background: black;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+
+.loading_text {
+  font-family: var(--main-capital-font);
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  color: black;
+
+}
+
+@keyframes jump {
+    0%   {margin-top: 30px}
+    100% {margin-top: 0px}
+}
+
+#ball_1{
+  animation: jump 0.5s linear infinite alternate;
+}
+#ball_2{
+  animation: jump 0.5s linear infinite alternate;
+  animation-delay: 0.3s;
+}
+#ball_3{
+  animation: jump 0.5s linear infinite alternate;
+  animation-delay: 0.6s;
+}
+
+/* MODAL ////////////////////////////////*/
+.modal_container_showing {
+  overflow: hidden;
+  position: fixed;
+  background: rgba(0,0,0,0.8);
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal_container_hiding {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  background: white;
+  width: 360px;
+  border-radius: 4px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.modal i{
+  color: var(--main-blue-color);
+  height: 64px;
+  width: 64px;
+  margin-right: 20px;
+  font-size: 64px;
+}
+
+.modal input, .modal select{
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px 0px;
+  color: var(--main-light-grey);
+  border: 1px solid var(--main-light-grey);
+
+}
+
+.modal .errorInput{
+  border: 1px solid red;
+}
+
+.modal .two-input{
+  margin: 0px;
+  width: 100%;
+}
+
+
+.modal select {
+  margin: 20px 0px 0px 0px;
+  height: 40px;
+  width: 100%;
+
+}
+
+.cancel {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+/* .image-view {
+  overflow: hidden;
+  background: red;
+  height: 90vh;
+} */
+/* 
+.image-view-frame{
+  height: 100%;
+  width: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+} */
+
+
+@media screen and (max-width: 600px) {
+  .modal{
+    padding: 20px;
+  }
+}
+
+/* FORM ////////////////////////////////*/
+
+form input, textarea{
+  border: 2px solid transparent;
+  border-radius: 2px;
+  border-bottom-color: #bababa;
+  padding: 5px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  background: none;
+  width: 100%;
+}
+
+input:focus{
+  border-bottom-color: #4256f4;
+  outline: none;
+}
+
+
+.two-input, .one-input {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px;
+}
+
+.one-input {
+  display: block;
+}
+
+.one, .two {
+  width: 200px;
+}
+
+
+
+/* USER LOGIN  & REGISTRATION PAGE DESIGN ////////////////////////////////*/
+ .login-content, .registration-content{
+  background: #F8F8F8;
+  width: 450px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  box-shadow: 14px 21px 41px -27px rgba(0,0,0,0.75);
+}
+
+.registration-content {
+  height: 500px;
+}
